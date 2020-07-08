@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Day3_Assignment.Models;
-using Day3_Assignment.Models.Product;
+using Day3_Assignment.Models; 
 
 namespace Day3_Assignment.Controllers
 {
@@ -14,12 +13,13 @@ namespace Day3_Assignment.Controllers
         {
             new Product(){pid="1",pname="Chocolate",stock=50,price=10}
         };
-        public IActionResult Index()
+        public IActionResult Index(String uid)
         {
-            return View();
+            Product p = list.SingleOrDefault(i => i.pid == uid);
+            return View(p);
         }
         [HttpGet]
-        public IActionResult Create ()
+        public IActionResult Create()
         {
             return View();
         }
@@ -29,6 +29,7 @@ namespace Day3_Assignment.Controllers
             if (ModelState.IsValid)
             {
                 list.Add(p);
+                Console.WriteLine(list);
                 return RedirectToAction("GetAll");
             }
             else
@@ -36,10 +37,9 @@ namespace Day3_Assignment.Controllers
                 return View("Create");
             }
         }
-        public IActionResult GetAll(String uid)
+        public IActionResult GetAll()
         {
-            Product p = list.SingleOrDefault(i => i.pid == uid);
-            return View(p);
+            return View(list);
         }
     }
 }

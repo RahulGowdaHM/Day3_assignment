@@ -18,8 +18,11 @@
         <td>@item.pname</td>
         <td>@item.price</td>
         <td>@item.stock</td>
-        <td><a href="Index?uid=@item.pid">ViewInfo</a></td>
+        <td><a href="/Product/Index?uid=@item.pid">ViewInfo</a></td>
     </tr>
         }
     </table>
+    <div>
+        <a href="/Product/Create">Add Item</a>
+    </div>
 </div>
