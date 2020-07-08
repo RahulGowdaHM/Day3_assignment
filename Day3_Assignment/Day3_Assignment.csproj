@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Day3_Assignments</RootNamespace>
+    <AssemblyName>Day3_Assignments</AssemblyName>
+  </PropertyGroup>
+
+</Project>

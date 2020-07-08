@@ -1,0 +1,25 @@
+﻿@model List<Day3_Assignment.Models.Product>
+@{
+    ViewData["Title"] = "GetAll";
+}
+<h1>List</h1>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.pid</td>
+        <td>@item.pname</td>
+        <td>@item.price</td>
+        <td>@item.stock</td>
+        <td><a href="Index?uid=@item.pid">ViewInfo</a></td>
+    </tr>
+        }
+    </table>
+</div>
